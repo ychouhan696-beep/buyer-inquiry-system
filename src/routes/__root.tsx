@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "ElevenX Media — Performance Marketing for Real Estate" },
+      { name: "description", content: "ElevenX Media builds Buyer Inquiry Engines that turn Meta Ads spend into qualified site visits for builders, developers, brokers and channel partners." },
+      { name: "author", content: "ElevenX Media" },
+      { property: "og:title", content: "ElevenX Media — Performance Marketing for Real Estate" },
+      { property: "og:description", content: "Buyer Inquiry Engine™ — qualified inquiries that turn into real site visits." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@ElevenXMedia" },
     ],
     links: [
       {
@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>

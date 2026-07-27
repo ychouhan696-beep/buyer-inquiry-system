@@ -129,6 +129,16 @@ function Metrics() {
           </div>
         ))}
       </div>
+      <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-center gap-3 px-6 py-10">
+        <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground purple-glow hover:opacity-90 transition">
+          <MessageCircle className="h-4 w-4" />
+          Chat on WhatsApp
+          <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </a>
+        <a href="#results" className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-5 py-3 text-sm font-medium text-foreground hover:bg-card transition">
+          View Results
+        </a>
+      </div>
     </section>
   );
 }

@@ -275,7 +275,7 @@ function Hero() {
               alt="Yogesh Chouhan, Founder of ElevenX Media"
               width={944}
               height={1152}
-              className="relative mx-auto w-full max-w-[420px] object-contain"
+              className="relative mx-auto w-full max-w-[420px] object-contain [mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"
             />
             {/* Desktop floating metric cards */}
             <div className="pointer-events-none absolute inset-0 hidden lg:block">

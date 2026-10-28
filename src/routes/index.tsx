@@ -150,29 +150,29 @@ function Logo() {
   );
 }
 
-function DisabledNote({ label }: { label: string }) {
+const ctaBase = "inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium transition";
+
+function DisabledCta({ label, compact }: { label: string; compact?: boolean }) {
   return (
     <button
       type="button"
       disabled
       title={`${label} — contact link being set up`}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium opacity-60 ${classNamePlaceholder}`}
+      className={`${ctaBase} cursor-not-allowed bg-primary text-primary-foreground opacity-60 ${compact ? "px-4 py-2" : "px-6 py-3.5"}`}
     >
       {label}
     </button>
   );
 }
 
-const classNamePlaceholder = "bg-primary text-primary-foreground cursor-not-allowed";
-
-function PrimaryCta({ className = "" }: { className?: string }) {
-  if (!BOOKING_URL) return <DisabledNote label="Book a Free Audit Call" />;
+function PrimaryCta({ className = "", compact = false }: { className?: string; compact?: boolean }) {
+  if (!BOOKING_URL) return <DisabledCta label="Book a Free Audit Call" compact={compact} />;
   return (
     <a
       href={BOOKING_URL}
       target="_blank"
       rel="noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-[0_10px_30px_-12px_oklch(0.55_0.22_295/45%)] transition hover:opacity-90 ${className}`}
+      className={`${ctaBase} bg-primary text-primary-foreground shadow-[0_10px_30px_-12px_oklch(0.55_0.22_295/45%)] hover:opacity-90 ${compact ? "px-4 py-2" : "px-6 py-3.5"} ${className}`}
     >
       <PhoneCall className="h-4 w-4 shrink-0" />
       Book a Free Audit Call
@@ -222,7 +222,7 @@ function Nav() {
             ))}
           </nav>
           <div className="hidden md:block">
-            <PrimaryCta className="!px-4 !py-2" />
+            <PrimaryCta compact />
           </div>
           <button
             type="button"

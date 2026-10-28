@@ -77,11 +77,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ElevenX Media — Performance Marketing for Real Estate" },
-      { name: "description", content: "ElevenX Media builds Buyer Inquiry Engines that turn Meta Ads spend into qualified site visits for builders, developers, brokers and channel partners." },
+      { title: "ElevenX Media — Real Estate Meta Ads & Buyer Inquiry Systems" },
+      {
+        name: "description",
+        content:
+          "ElevenX Media helps real estate builders, developers and channel partners turn ad spend into better buyer inquiries — with real Meta Ads campaign results to show for it.",
+      },
       { name: "author", content: "ElevenX Media" },
-      { property: "og:title", content: "ElevenX Media — Performance Marketing for Real Estate" },
-      { property: "og:description", content: "Buyer Inquiry Engine™ — qualified inquiries that turn into real site visits." },
+      {
+        property: "og:title",
+        content: "ElevenX Media — Real Estate Meta Ads & Buyer Inquiry Systems",
+      },
+      {
+        property: "og:description",
+        content:
+          "Real Meta Ads campaign screenshots for real estate projects. One system for lead generation, qualification and follow-up.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@ElevenXMedia" },
@@ -102,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <HeadContent />
       </head>

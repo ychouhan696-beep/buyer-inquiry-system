@@ -138,15 +138,16 @@ const processSteps = [
   },
 ];
 
-function Logo() {
+function Logo({ className = "h-6 sm:h-7" }: { className?: string }) {
   return (
-    <a href="#" className="flex min-w-0 items-center gap-2 text-sm font-semibold tracking-tight">
-      <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-primary text-[11px] font-bold text-primary-foreground">
-        11
-      </span>
-      <span className="truncate">
-        ElevenX <span className="font-normal text-muted-foreground">Media</span>
-      </span>
+    <a href="#" className="flex min-w-0 items-center" aria-label="ElevenX Media — home">
+      <img
+        src={logoImg}
+        alt="ElevenX Media"
+        className={`w-auto shrink-0 ${className}`}
+        width={1560}
+        height={569}
+      />
     </a>
   );
 }

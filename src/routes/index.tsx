@@ -25,6 +25,7 @@ import proofVilla1 from "@/assets/proof-villa-1.png.asset.json";
 import proofVilla2 from "@/assets/proof-villa-2.png.asset.json";
 import proofVilla3 from "@/assets/proof-villa-3.png.asset.json";
 import proofVilla4 from "@/assets/proof-villa-4.png.asset.json";
+import logoImg from "@/assets/elevenx-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({

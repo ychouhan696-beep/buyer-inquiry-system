@@ -182,7 +182,7 @@ function PrimaryCta({ className = "", compact = false }: { className?: string; c
 }
 
 function WhatsAppCta({ className = "" }: { className?: string }) {
-  if (!WHATSAPP_URL) return <DisabledNote label="Chat on WhatsApp" />;
+  if (!WHATSAPP_URL) return <DisabledCta label="Chat on WhatsApp" />;
   return (
     <a
       href={WHATSAPP_URL}

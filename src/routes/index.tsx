@@ -373,8 +373,7 @@ function Results() {
           ))}
         </div>
         <p className="mt-8 max-w-3xl rounded-2xl border border-border bg-background p-5 text-sm leading-relaxed text-muted-foreground">
-          Results shown are from reported advertising campaigns. Performance varies by project, location, offer, budget,
-          and follow-up process. Leads do not automatically mean confirmed site visits or property sales.
+          Campaign results reflect past performance. Every project receives a tailored strategy designed to improve lead quality, optimize ad spend, and drive measurable growth.
         </p>
       </div>
       {zoom && <Lightbox src={zoom.src.url} caption={zoom.label} onClose={() => setZoom(null)} />}

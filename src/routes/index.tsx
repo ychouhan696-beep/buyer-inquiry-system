@@ -13,18 +13,19 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import caseStudy1 from "@/assets/case-study-1.png.asset.json";
-import caseStudy2 from "@/assets/case-study-2.png.asset.json";
-import meetingPhoto from "@/assets/meeting-photo.png.asset.json";
-import clientCommunication from "@/assets/client-communication.jpg.asset.json";
-import proofPlot1 from "@/assets/proof-plot-1.png.asset.json";
-import proofPlot2 from "@/assets/proof-plot-2.png.asset.json";
-import proofResidential1 from "@/assets/proof-residential-1.png.asset.json";
-import proofResidential2 from "@/assets/proof-residential-2.png.asset.json";
-import proofVilla1 from "@/assets/proof-villa-1.png.asset.json";
-import proofVilla2 from "@/assets/proof-villa-2.png.asset.json";
-import proofVilla3 from "@/assets/proof-villa-3.png.asset.json";
-import proofVilla4 from "@/assets/proof-villa-4.png.asset.json";
+// Images live in /public/images so they work on any static host (Vercel, Netlify, etc.).
+const caseStudy1 = "/images/case-study-1.png";
+const caseStudy2 = "/images/case-study-2.png";
+const meetingPhoto = "/images/meeting-photo.png";
+const clientCommunication = "/images/client-communication.jpg";
+const proofPlot1 = "/images/proof-plot-1.png";
+const proofPlot2 = "/images/proof-plot-2.png";
+const proofResidential1 = "/images/proof-residential-1.png";
+const proofResidential2 = "/images/proof-residential-2.png";
+const proofVilla1 = "/images/proof-villa-1.png";
+const proofVilla2 = "/images/proof-villa-2.png";
+const proofVilla3 = "/images/proof-villa-3.png";
+const proofVilla4 = "/images/proof-villa-4.png";
 import logoImg from "@/assets/elevenx-logo.png";
 
 export const Route = createFileRoute("/")({

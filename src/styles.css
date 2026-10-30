@@ -74,8 +74,8 @@
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.62 0.19 260);
 
-  --gold: oklch(0.79 0.09 80);
-  --gold-soft: oklch(0.79 0.09 80 / 14%);
+  --gold: oklch(0.83 0.165 86);
+  --gold-soft: oklch(0.83 0.165 86 / 14%);
   --glow: oklch(0.62 0.19 260);
   --success: oklch(0.72 0.14 160);
   --warning: oklch(0.8 0.15 80);

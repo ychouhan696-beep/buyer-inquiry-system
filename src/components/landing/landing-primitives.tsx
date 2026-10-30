@@ -39,12 +39,11 @@ export function PrimaryButton({ compact = false, className = "" }: { compact?: b
   );
 }
 
+export const secondaryButtonClass = `${buttonBase} border border-glow/60 text-foreground shadow-[0_0_28px_-10px_oklch(0.62_0.19_260/70%)] hover:bg-glow/10 hover:shadow-[0_0_36px_-8px_oklch(0.62_0.19_260/85%)]`;
+
 export function SecondaryButton({ href, children, className = "" }: { href: string; children: ReactNode; className?: string }) {
   return (
-    <a
-      href={href}
-      className={`${buttonBase} px-7 py-4 text-[15px] ${className} border border-glow/60 text-foreground shadow-[0_0_28px_-10px_oklch(0.62_0.19_260/70%)] hover:bg-glow/10 hover:shadow-[0_0_36px_-8px_oklch(0.62_0.19_260/85%)]`}
-    >
+    <a href={href} className={`${secondaryButtonClass} px-7 py-4 text-[15px] ${className}`}>
       {children}
     </a>
   );

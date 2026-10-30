@@ -13,18 +13,19 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import caseStudy1 from "@/assets/case-study-1.png.asset.json";
-import caseStudy2 from "@/assets/case-study-2.png.asset.json";
-import meetingPhoto from "@/assets/meeting-photo.png.asset.json";
-import clientCommunication from "@/assets/client-communication.jpg.asset.json";
-import proofPlot1 from "@/assets/proof-plot-1.png.asset.json";
-import proofPlot2 from "@/assets/proof-plot-2.png.asset.json";
-import proofResidential1 from "@/assets/proof-residential-1.png.asset.json";
-import proofResidential2 from "@/assets/proof-residential-2.png.asset.json";
-import proofVilla1 from "@/assets/proof-villa-1.png.asset.json";
-import proofVilla2 from "@/assets/proof-villa-2.png.asset.json";
-import proofVilla3 from "@/assets/proof-villa-3.png.asset.json";
-import proofVilla4 from "@/assets/proof-villa-4.png.asset.json";
+// Images live in /public/images so they work on any static host (Vercel, Netlify, etc.).
+const caseStudy1 = "/images/case-study-1.png";
+const caseStudy2 = "/images/case-study-2.png";
+const meetingPhoto = "/images/meeting-photo.png";
+const clientCommunication = "/images/client-communication.jpg";
+const proofPlot1 = "/images/proof-plot-1.png";
+const proofPlot2 = "/images/proof-plot-2.png";
+const proofResidential1 = "/images/proof-residential-1.png";
+const proofResidential2 = "/images/proof-residential-2.png";
+const proofVilla1 = "/images/proof-villa-1.png";
+const proofVilla2 = "/images/proof-villa-2.png";
+const proofVilla3 = "/images/proof-villa-3.png";
+const proofVilla4 = "/images/proof-villa-4.png";
 import logoImg from "@/assets/elevenx-logo.png";
 
 export const Route = createFileRoute("/")({
@@ -288,7 +289,7 @@ function Hero() {
         <div className="lg:col-span-5">
           <figure className="relative mx-auto w-full max-w-[340px] overflow-hidden rounded-[24px] border border-border bg-card shadow-[0_30px_60px_-30px_oklch(0_0_0/25%)]">
             <img
-              src={proofPlot1.url}
+              src={proofPlot1}
               alt="Original Meta Ads Manager screenshot from a real estate plot project campaign"
               width={1080}
               height={2340}
@@ -352,14 +353,14 @@ function Results() {
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {proofScreenshots.map((shot, i) => (
             <button
-              key={shot.src.url}
+              key={shot.src}
               type="button"
               onClick={() => setZoom(shot)}
               className="group overflow-hidden rounded-2xl border border-border bg-card p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
               <div className="relative overflow-hidden rounded-xl bg-muted">
                 <img
-                  src={shot.src.url}
+                  src={shot.src}
                   alt={`${shot.label} — Meta Ads Manager campaign screenshot ${i + 1}`}
                   loading="lazy"
                   width={1080}
@@ -378,7 +379,7 @@ function Results() {
           Campaign results reflect past performance. Every project receives a tailored strategy designed to improve lead quality, optimize ad spend, and drive measurable growth.
         </p>
       </div>
-      {zoom && <Lightbox src={zoom.src.url} caption={zoom.label} onClose={() => setZoom(null)} />}
+      {zoom && <Lightbox src={zoom.src} caption={zoom.label} onClose={() => setZoom(null)} />}
     </section>
   );
 }
@@ -398,7 +399,7 @@ function CaseStudies() {
           <article key={cs.title} className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
             <div className="flex justify-center bg-muted p-4">
               <img
-                src={cs.image.url}
+                src={cs.image}
                 alt={`${cs.title} — campaign performance proof`}
                 loading="lazy"
                 width={1600}
@@ -476,7 +477,7 @@ function BehindTheScenes() {
         <div className="lg:col-span-6">
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
             <img
-              src={meetingPhoto.url}
+              src={meetingPhoto}
               alt="Planning and execution meeting over Google Meet"
               loading="lazy"
               width={1920}
@@ -518,7 +519,7 @@ function ClientCommunication() {
             className="group mx-auto block w-full max-w-[320px] overflow-hidden rounded-3xl border border-border bg-card p-2 shadow-sm transition hover:shadow-md"
           >
             <img
-              src={clientCommunication.url}
+              src={clientCommunication}
               alt="WhatsApp conversation with a client about leads and site visits, personal details hidden"
               loading="lazy"
               width={1077}
@@ -530,7 +531,7 @@ function ClientCommunication() {
       </div>
       {zoom && (
         <Lightbox
-          src={clientCommunication.url}
+          src={clientCommunication}
           caption="Client communication"
           onClose={() => setZoom(false)}
         />

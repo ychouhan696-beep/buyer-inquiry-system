@@ -289,7 +289,7 @@ function Hero() {
         <div className="lg:col-span-5">
           <figure className="relative mx-auto w-full max-w-[340px] overflow-hidden rounded-[24px] border border-border bg-card shadow-[0_30px_60px_-30px_oklch(0_0_0/25%)]">
             <img
-              src={proofPlot1.url}
+              src={proofPlot1}
               alt="Original Meta Ads Manager screenshot from a real estate plot project campaign"
               width={1080}
               height={2340}
@@ -353,7 +353,7 @@ function Results() {
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {proofScreenshots.map((shot, i) => (
             <button
-              key={shot.src.url}
+              key={shot.src}
               type="button"
               onClick={() => setZoom(shot)}
               className="group overflow-hidden rounded-2xl border border-border bg-card p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"

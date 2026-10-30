@@ -78,27 +78,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ElevenX Media — Real Estate Meta Ads & Buyer Inquiry Systems" },
+      { title: "ElevenX Media — We Build Buyer Pipelines for Real Estate" },
       {
         name: "description",
         content:
-          "ElevenX Media helps real estate builders, developers and channel partners turn ad spend into better buyer inquiries — with real Meta Ads campaign results to show for it.",
+          "ElevenX Media runs Meta Ads and funnel systems for builders and developers that filter timepass enquiries and deliver site-visit ready buyers to WhatsApp.",
       },
       { name: "author", content: "ElevenX Media" },
       {
         property: "og:title",
-        content: "ElevenX Media — Real Estate Meta Ads & Buyer Inquiry Systems",
+        content: "ElevenX Media — We Build Buyer Pipelines for Real Estate",
       },
       {
         property: "og:description",
         content:
-          "Real Meta Ads campaign screenshots for real estate projects. One system for lead generation, qualification and follow-up.",
+          "Intent-based Meta Ads, qualification and pipeline management for plots, villas and apartments.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@ElevenXMedia" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;800&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -114,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" style={{ colorScheme: "dark" }}>
       <head>
         <HeadContent />
       </head>

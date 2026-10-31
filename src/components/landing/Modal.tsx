@@ -18,7 +18,7 @@ export function Modal({ label, onClose, children }: { label: string; onClose: ()
   return createPortal(
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-background/80 p-4 backdrop-blur-sm sm:p-6"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-background/85 p-4 backdrop-blur-sm sm:p-6"
     >
       <div role="dialog" aria-modal="true" aria-label={label} onClick={(event) => event.stopPropagation()} className="relative">
         <button

@@ -23,7 +23,7 @@ export function ZoomableImage({ src, alt, imageClassName = "", wrapperClassName 
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Enlarge image"
-        className="absolute top-3 right-3 z-10 grid h-8 w-8 place-items-center rounded-full bg-white text-background shadow-[0_8px_20px_-6px_oklch(0_0_0/60%)] transition-transform duration-300 hover:scale-105"
+        className="absolute top-3 right-3 z-10 grid h-9 w-9 place-items-center rounded-full bg-white text-background shadow-[0_8px_20px_-6px_oklch(0_0_0/60%)] transition-transform duration-300 hover:scale-105"
       >
         <Plus className="h-4 w-4" strokeWidth={2.5} />
       </button>

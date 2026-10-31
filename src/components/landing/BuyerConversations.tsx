@@ -12,6 +12,11 @@ const conversations = [
     alt: "WhatsApp conversation with Sunil Sharma about a Noida plot, self buying and a Saturday site visit",
     label: "Sunil Sharma • Noida Plot • 50L Budget • Self Buyer (Not Broker) • Site Visit: Saturday 4PM Jewar",
   },
+  {
+    image: "/images/final_dharmesh_proof.png",
+    alt: "WhatsApp conversation with Dharmesh Godara about lead volume and site visits",
+    label: "Dharmesh Godara • Real WhatsApp Conversation • Leads & Site Visits",
+  },
 ];
 
 export function BuyerConversations() {
@@ -25,14 +30,14 @@ export function BuyerConversations() {
             Not just leads. Real conversations that reach your WhatsApp - already qualified, ready for site visit.
           </p>
         </Reveal>
-        <div className="mx-auto mt-20 grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+        <div className="mx-auto mt-20 grid max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
           {conversations.map((chat, index) => (
             <Reveal key={chat.image} delay={index * 90}>
               <figure>
                 <ZoomableImage
                   src={chat.image}
                   alt={chat.alt}
-                  wrapperClassName="lift h-[500px] overflow-hidden rounded-[20px] border border-slate-800 bg-card shadow-[var(--shadow-card)] md:h-[650px]"
+                  wrapperClassName="lift h-[500px] overflow-hidden rounded-[20px] border border-slate-800 bg-card shadow-[var(--shadow-card)] md:h-[700px]"
                   imageClassName="h-full w-full object-contain object-top"
                 />
                 <figcaption className="mt-3 text-center text-[13px] leading-[1.6] text-slate-400">{chat.label}</figcaption>

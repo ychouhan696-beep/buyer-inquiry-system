@@ -3,6 +3,7 @@ import { proofCards, proofHeadline, type ProofCard } from "@/lib/proof-cards";
 import { Reveal, SectionHeading, secondaryButtonClass } from "./landing-primitives";
 
 const INITIAL_VISIBLE = 6;
+const PILL_LABEL = "Meta Ads Manager - Live Data";
 
 export function Results() {
   const [showAll, setShowAll] = useState(false);
@@ -48,20 +49,16 @@ function ProofCardView({ card }: { card: ProofCard }) {
           className="h-full w-full object-cover object-[center_30%] transition-transform duration-700 ease-[var(--ease-premium)] group-hover:scale-[1.03]"
         />
         <span className="absolute top-4 left-4 rounded-full border border-border bg-background/80 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-md">
-          {card.pill}
+          {PILL_LABEL}
         </span>
       </div>
       <div className="flex flex-1 flex-col px-6 pt-4 pb-6">
         <h3 className="text-lg tracking-[-0.02em]">{card.projectType}</h3>
-        {card.metrics ? (
-          <dl className="mt-5 grid grid-cols-3 gap-4 border-t border-border pt-5">
-            <Metric label="Spend" value={card.metrics.spend} />
-            <Metric label="CPL" value={card.metrics.cpl} />
-            <Metric label="Leads" value={card.metrics.leads} />
-          </dl>
-        ) : (
-          <p className="mt-3 text-sm leading-[1.6] text-muted-foreground">{card.caption}</p>
-        )}
+        <dl className="mt-5 grid grid-cols-3 gap-4 border-t border-border pt-5">
+          <Metric label="Spend" value={card.metrics.spend} />
+          <Metric label="CPL" value={card.metrics.cpl} />
+          <Metric label="Leads" value={card.metrics.leads} />
+        </dl>
       </div>
     </article>
   );

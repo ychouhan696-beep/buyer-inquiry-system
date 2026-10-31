@@ -16,8 +16,9 @@ export function Hero() {
           <span className="block text-muted-foreground">We Build Buyer Pipelines.</span>
         </h1>
         <p className="fade-up mt-8 max-w-xl text-base leading-[1.6] text-muted-foreground md:text-lg" style={{ animationDelay: "120ms" }}>
-          For builders &amp; developers doing 5Cr+ in inventory. Our Meta Ads + Funnel system filters timepass enquiries
-          and delivers only site-visit ready buyers to your WhatsApp.
+          Stop wasting your sales team&apos;s time on casual property enquiries. We help builders, developers &amp; channel
+          partners with ₹5Cr+ inventory attract and qualify serious buyers through Meta Ads, funnels, and automated
+          follow-ups.
         </p>
         <div className="fade-up mt-12 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: "220ms" }}>
           <PrimaryButton className="w-full sm:w-auto" />

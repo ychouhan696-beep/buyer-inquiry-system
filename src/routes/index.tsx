@@ -1,4 +1,3 @@
-import { BookingProvider } from "@/components/landing/booking-context";
 import { Hero } from "@/components/landing/Hero";
 import { BuyerConversations } from "@/components/landing/BuyerConversations";
 import { CaseStudies } from "@/components/landing/CaseStudies";
@@ -37,21 +36,19 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <BookingProvider>
-      <div className="min-h-screen overflow-x-hidden bg-background text-foreground antialiased">
-        <Nav />
-        <main>
-          <Hero />
-          <Services />
-          <CaseStudies />
-          <BuyerConversations />
-          <Results />
-          <Testimonials />
-          <Process />
-          <ContactCta />
-        </main>
-        <Footer />
-      </div>
-    </BookingProvider>
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground antialiased">
+      <Nav />
+      <main>
+        <Hero />
+        <Services />
+        <CaseStudies />
+        <BuyerConversations />
+        <Results />
+        <Testimonials />
+        <Process />
+        <ContactCta />
+      </main>
+      <Footer />
+    </div>
   );
 }

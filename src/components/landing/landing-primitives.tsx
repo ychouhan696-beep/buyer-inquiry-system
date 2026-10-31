@@ -1,7 +1,9 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import logoImg from "@/assets/elevenx-logo.png";
 import { goldButtonClass, secondaryButtonClass } from "./button-classes";
-import { useBooking } from "./booking-context";
+
+const GOOGLE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfFSSR58dz_s4eJMR_avdg8vGqwv4og8P70l2QNQ7Jr_6izcw/viewform?usp=header";
 
 export function Logo({ className = "h-7" }: { className?: string }) {
   return (
@@ -18,10 +20,13 @@ export function Logo({ className = "h-7" }: { className?: string }) {
 }
 
 export function PrimaryButton({ compact = false, className = "" }: { compact?: boolean; className?: string }) {
-  const { openBooking } = useBooking();
   const size = compact ? "px-5 py-2.5 text-sm" : "px-7 py-4 text-[15px]";
   return (
-    <button type="button" onClick={openBooking} className={`${goldButtonClass} ${size} ${className}`}>
+    <button
+      type="button"
+      onClick={() => window.open(GOOGLE_FORM_URL, "_blank")}
+      className={`${goldButtonClass} ${size} ${className}`}
+    >
       Book a Free Strategy Call
     </button>
   );

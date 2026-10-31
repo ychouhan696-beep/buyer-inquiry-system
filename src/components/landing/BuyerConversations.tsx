@@ -13,7 +13,7 @@ const conversations = [
     label: "Sunil Sharma • Noida Plot • 50L Budget • Self Buyer (Not Broker) • Site Visit: Saturday 4PM Jewar",
   },
   {
-    image: "/images/final_dharmesh_proof.png",
+    image: "/final_dharmesh_proof.png",
     alt: "WhatsApp conversation with Dharmesh Godara about lead volume and site visits",
     label: "Dharmesh Godara • Real WhatsApp Conversation • Leads & Site Visits",
   },

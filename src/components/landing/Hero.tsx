@@ -4,7 +4,7 @@ const stats = [
   { value: "3.5+ Years", label: "Industry Experience" },
   { value: "16,700+", label: "Total Buyer Leads Generated" },
   { value: "₹1.4 Cr+", label: "Total Ad Spend Managed" },
-  { value: "Real Estate", label: "Industry Focus", inline: true },
+  { value: "Real Estate", label: "Industry Focus" },
 ];
 
 export function Hero() {
@@ -27,22 +27,20 @@ export function Hero() {
             See Campaign Proof
           </SecondaryButton>
         </div>
-        <dl
-          className="fade-up mx-auto mt-24 grid max-w-[1200px] grid-cols-2 gap-x-10 gap-y-12 border-t border-border pt-14 text-center md:grid-cols-4"
-          style={{ animationDelay: "320ms" }}
-        >
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className={
-                stat.inline ? "flex flex-row-reverse flex-wrap items-baseline justify-center gap-x-3 gap-y-1" : "flex flex-col-reverse items-center gap-3"
-              }
-            >
-              <dt className="text-sm text-slate-400">{stat.label}</dt>
-              <dd className="font-display text-5xl font-extrabold tracking-[-0.03em] text-gold">{stat.value}</dd>
-            </div>
-          ))}
-        </dl>
+        <div className="relative mt-24">
+          <div className="section-glow pointer-events-none absolute inset-0" aria-hidden="true" />
+          <dl
+            className="fade-up relative mx-auto grid max-w-[1200px] grid-cols-2 gap-x-6 gap-y-12 border-t border-border pt-14 text-center lg:grid-cols-4"
+            style={{ animationDelay: "320ms" }}
+          >
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex flex-col-reverse items-center gap-3">
+                <dt className="text-sm text-slate-400">{stat.label}</dt>
+                <dd className="gold-glow font-display text-3xl font-extrabold tracking-[-0.03em] text-gold xl:text-4xl">{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   );

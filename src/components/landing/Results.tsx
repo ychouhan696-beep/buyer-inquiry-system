@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { proofCards, proofHeadline, type ProofCard } from "@/lib/proof-cards";
-import { Reveal, SectionHeading, secondaryButtonClass } from "./landing-primitives";
+import { Reveal, SectionHeading } from "./landing-primitives";
+import { secondaryButtonClass } from "./button-classes";
 import { ZoomableImage } from "./ZoomableImage";
 
 const INITIAL_VISIBLE = 6;
@@ -41,7 +42,7 @@ export function Results() {
 
 function ProofCardView({ card }: { card: ProofCard }) {
   return (
-    <article className="lift group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)]">
+    <article className="lift sheen-card group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)]">
       <ZoomableImage
         src={card.image}
         alt={card.alt}
@@ -68,7 +69,7 @@ function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <dt className="text-xs tracking-[0.14em] text-muted-foreground uppercase">{label}</dt>
-      <dd className="mt-2 font-display text-lg font-extrabold tracking-[-0.02em] text-gold">{value}</dd>
+      <dd className="mt-2 gold-glow font-display text-lg font-extrabold tracking-[-0.02em] text-gold">{value}</dd>
     </div>
   );
 }

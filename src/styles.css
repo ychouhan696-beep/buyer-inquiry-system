@@ -64,7 +64,7 @@
   --secondary: oklch(0.23 0.035 265);
   --secondary-foreground: oklch(0.97 0.005 265);
   --muted: oklch(0.2 0.033 265);
-  --muted-foreground: oklch(0.72 0.03 265);
+  --muted-foreground: oklch(0.87 0.015 260);
   --accent: oklch(0.26 0.04 265);
   --accent-foreground: oklch(0.97 0.005 265);
   --destructive: oklch(0.65 0.2 25);
@@ -111,6 +111,7 @@
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.12;
+    color: oklch(1 0 0);
   }
 }
 
@@ -172,6 +173,67 @@
   transform: translateY(-2px);
 }
 
+.btn-shine {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 35%, oklch(1 0 0 / 55%) 50%, transparent 65%);
+  transform: translateX(-100%);
+  transition: transform 0.9s var(--ease-premium);
+}
+
+.btn-shine:hover::after {
+  transform: translateX(100%);
+}
+
+.gold-glow {
+  text-shadow: 0 0 24px oklch(0.83 0.165 86 / 35%);
+}
+
+.section-glow {
+  background: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    oklch(0.62 0.19 260 / 22%) 0%,
+    oklch(0.62 0.19 260 / 0%) 70%
+  );
+}
+
+.sheen-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.sheen-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, oklch(0.685 0.169 237), oklch(0.83 0.165 86));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-premium);
+}
+
+.sheen-card:hover::before {
+  opacity: 1;
+}
+
+.sheen-card:hover {
+  box-shadow: var(--shadow-card-hover), 0 0 48px -16px oklch(0.62 0.19 260 / 50%);
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -191,7 +253,8 @@
   .fade-up,
   .reveal,
   .lift,
-  .btn-lift {
+  .btn-lift,
+  .btn-shine::after {
     animation: none;
     opacity: 1;
     transform: none;

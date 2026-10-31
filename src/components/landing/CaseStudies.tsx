@@ -35,7 +35,7 @@ export function CaseStudies() {
       <div className="mt-20 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {caseStudies.map((study, index) => (
           <Reveal key={study.title} delay={index * 90}>
-            <article className="lift flex h-full flex-col overflow-hidden rounded-[20px] border border-border bg-card shadow-[var(--shadow-card)]">
+            <article className="lift sheen-card flex h-full flex-col overflow-hidden rounded-[20px] border border-border bg-card shadow-[var(--shadow-card)]">
               <ZoomableImage
                 src={study.image}
                 alt={study.alt}

@@ -1,6 +1,6 @@
-import { Plus, X } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
-import { createPortal } from "react-dom";
+import { Plus } from "lucide-react";
+import { useCallback, useState, type ReactNode } from "react";
+import { Modal } from "./Modal";
 
 type ZoomableImageProps = {
   src: string;
@@ -12,6 +12,8 @@ type ZoomableImageProps = {
 
 export function ZoomableImage({ src, alt, imageClassName = "", wrapperClassName = "", children }: ZoomableImageProps) {
   const [open, setOpen] = useState(false);
+  const close = useCallback(() => setOpen(false), []);
+
   return (
     <div className={`relative ${wrapperClassName}`}>
       <button type="button" onClick={() => setOpen(true)} aria-label={`View ${alt} fullscreen`} className="block h-full w-full cursor-zoom-in">
@@ -26,47 +28,11 @@ export function ZoomableImage({ src, alt, imageClassName = "", wrapperClassName 
         <Plus className="h-4 w-4" strokeWidth={2.5} />
       </button>
       {children}
-      {open && <Lightbox src={src} alt={alt} onClose={() => setOpen(false)} />}
+      {open && (
+        <Modal label={alt} onClose={close}>
+          <img src={src} alt={alt} className="max-h-[90vh] max-w-[90vw] rounded-2xl object-contain" />
+        </Modal>
+      )}
     </div>
-  );
-}
-
-function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
-  useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [onClose]);
-
-  return createPortal(
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={alt}
-      onClick={onClose}
-      className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-background/80 p-6 backdrop-blur-sm"
-    >
-      <button
-        type="button"
-        onClick={onClose}
-        aria-label="Close fullscreen image"
-        className="absolute top-5 right-5 grid h-10 w-10 place-items-center rounded-full bg-white text-background shadow-lg transition-transform duration-300 hover:scale-105"
-      >
-        <X className="h-5 w-5" />
-      </button>
-      <img
-        src={src}
-        alt={alt}
-        onClick={(event) => event.stopPropagation()}
-        className="max-h-[90vh] max-w-full rounded-2xl object-contain"
-      />
-    </div>,
-    document.body,
   );
 }

@@ -31,7 +31,7 @@ export function Testimonials() {
       <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-3">
         {testimonials.map((item, index) => (
           <Reveal key={item.name} delay={index * 90}>
-            <figure className="lift flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-card)]">
+            <figure className="lift sheen-card flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-card)]">
               <Quote className="h-8 w-8 text-foreground" strokeWidth={1.5} aria-hidden="true" />
               <div className="mt-6 flex gap-1 text-gold" aria-label="Rated 5 out of 5">
                 {Array.from({ length: 5 }, (_, star) => (

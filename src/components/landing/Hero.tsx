@@ -2,9 +2,9 @@ import { PrimaryButton, SecondaryButton } from "./landing-primitives";
 
 const stats = [
   { value: "3.5+ Years", label: "Industry Experience" },
-  { value: "7,700+", label: "Total Buyer Leads Generated" },
+  { value: "16,700+", label: "Total Buyer Leads Generated" },
   { value: "₹1.4 Cr+", label: "Total Ad Spend Managed" },
-  { value: "Real Estate", label: "Industry Focus" },
+  { value: "Real Estate", label: "Industry Focus", inline: true },
 ];
 
 export function Hero() {
@@ -32,7 +32,12 @@ export function Hero() {
           style={{ animationDelay: "320ms" }}
         >
           {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col-reverse items-center gap-3">
+            <div
+              key={stat.label}
+              className={
+                stat.inline ? "flex flex-row-reverse flex-wrap items-baseline justify-center gap-x-3 gap-y-1" : "flex flex-col-reverse items-center gap-3"
+              }
+            >
               <dt className="text-sm text-slate-400">{stat.label}</dt>
               <dd className="font-display text-5xl font-extrabold tracking-[-0.03em] text-gold">{stat.value}</dd>
             </div>

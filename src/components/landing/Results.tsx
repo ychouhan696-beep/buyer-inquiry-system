@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { proofCards, proofHeadline, type ProofCard } from "@/lib/proof-cards";
 import { Reveal, SectionHeading, secondaryButtonClass } from "./landing-primitives";
+import { ZoomableImage } from "./ZoomableImage";
 
 const INITIAL_VISIBLE = 6;
 const PILL_LABEL = "Meta Ads Manager - Live Data";
@@ -41,17 +42,16 @@ export function Results() {
 function ProofCardView({ card }: { card: ProofCard }) {
   return (
     <article className="lift group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)]">
-      <div className="relative m-3 h-[400px] overflow-hidden rounded-2xl border border-border bg-background">
-        <img
-          src={card.image}
-          alt={card.alt}
-          loading="lazy"
-          className="h-full w-full object-cover object-[center_30%] transition-transform duration-700 ease-[var(--ease-premium)] group-hover:scale-[1.03]"
-        />
+      <ZoomableImage
+        src={card.image}
+        alt={card.alt}
+        wrapperClassName="m-3 h-[400px] overflow-hidden rounded-2xl border border-border bg-background"
+        imageClassName="h-full w-full object-cover object-[center_30%] transition-transform duration-700 ease-[var(--ease-premium)] group-hover:scale-[1.03]"
+      >
         <span className="absolute top-4 left-4 rounded-full border border-border bg-background/80 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-md">
           {PILL_LABEL}
         </span>
-      </div>
+      </ZoomableImage>
       <div className="flex flex-1 flex-col px-6 pt-4 pb-6">
         <h3 className="text-lg tracking-[-0.02em]">{card.projectType}</h3>
         <dl className="mt-5 grid grid-cols-3 gap-4 border-t border-border pt-5">

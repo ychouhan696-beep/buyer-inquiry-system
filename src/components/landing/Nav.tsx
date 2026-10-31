@@ -5,7 +5,7 @@ import { Logo, PrimaryButton } from "./landing-primitives";
 const navLinks = [
   { href: "#work", label: "Work" },
   { href: "#services", label: "Services" },
-  { href: "#results", label: "Results" },
+  { href: "#process", label: "Process" },
   { href: "#contact", label: "Contact" },
 ];
 

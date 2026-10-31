@@ -1,4 +1,5 @@
 import { Reveal, SectionHeading } from "./landing-primitives";
+import { ZoomableImage } from "./ZoomableImage";
 
 const conversations = [
   {
@@ -24,11 +25,11 @@ export function BuyerConversations() {
               delay={index * 90}
               className="w-full md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)]"
             >
-              <img
+              <ZoomableImage
                 src={chat.image}
                 alt={chat.alt}
-                loading="lazy"
-                className="lift h-[500px] w-full rounded-2xl border border-border object-cover object-top shadow-[var(--shadow-card)]"
+                wrapperClassName="lift h-[500px] w-full overflow-hidden rounded-2xl border border-border shadow-[var(--shadow-card)]"
+                imageClassName="h-full w-full object-cover object-top"
               />
             </Reveal>
           ))}

@@ -4,6 +4,7 @@ import { CaseStudies } from "@/components/landing/CaseStudies";
 import { ContactCta } from "@/components/landing/ContactCta";
 import { Footer } from "@/components/landing/Footer";
 import { Nav } from "@/components/landing/Nav";
+import { Process } from "@/components/landing/Process";
 import { Results } from "@/components/landing/Results";
 import { Services } from "@/components/landing/Services";
 import { Testimonials } from "@/components/landing/Testimonials";
@@ -44,6 +45,7 @@ function Index() {
         <BuyerConversations />
         <Results />
         <Testimonials />
+        <Process />
         <ContactCta />
       </main>
       <Footer />

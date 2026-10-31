@@ -1,4 +1,5 @@
 import { Reveal, SectionHeading } from "./landing-primitives";
+import { ZoomableImage } from "./ZoomableImage";
 
 type CaseStudy = {
   image: string;
@@ -35,14 +36,12 @@ export function CaseStudies() {
         {caseStudies.map((study, index) => (
           <Reveal key={study.title} delay={index * 90}>
             <article className="lift flex h-full flex-col overflow-hidden rounded-[20px] border border-border bg-card shadow-[var(--shadow-card)]">
-              <div className="h-[500px] border-b border-border bg-background p-6">
-                <img
-                  src={study.image}
-                  alt={study.alt}
-                  loading="lazy"
-                  className="h-full w-full object-contain"
-                />
-              </div>
+              <ZoomableImage
+                src={study.image}
+                alt={study.alt}
+                wrapperClassName="h-[500px] border-b border-border bg-background p-6"
+                imageClassName="h-full w-full object-contain"
+              />
               <div className="flex flex-1 flex-col p-8">
                 <h3 className="text-2xl tracking-[-0.025em]">{study.title}</h3>
                 <p className="mt-4 text-base leading-[1.6] text-muted-foreground">

@@ -5,10 +5,6 @@ const conversations = [
     image: "/images/social-proof.jpg",
     alt: "WhatsApp conversation with a client asking about lead volume and site visits",
   },
-  {
-    image: "/images/client-communication.jpg",
-    alt: "WhatsApp conversation with a client about leads and site visits, personal details hidden",
-  },
 ];
 
 export function BuyerConversations() {
@@ -21,17 +17,19 @@ export function BuyerConversations() {
             Not just leads. Real conversations that reach your WhatsApp - already qualified, ready for site visit.
           </p>
         </Reveal>
-        <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-20 flex flex-wrap justify-center gap-6">
           {conversations.map((chat, index) => (
-            <Reveal key={chat.image} delay={index * 90}>
-              <figure className="lift overflow-hidden rounded-2xl border border-border bg-card p-3 shadow-[var(--shadow-card)]">
-                <img
-                  src={chat.image}
-                  alt={chat.alt}
-                  loading="lazy"
-                  className="h-[560px] w-full rounded-xl object-cover object-top"
-                />
-              </figure>
+            <Reveal
+              key={chat.image}
+              delay={index * 90}
+              className="w-full md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)]"
+            >
+              <img
+                src={chat.image}
+                alt={chat.alt}
+                loading="lazy"
+                className="lift h-[500px] w-full rounded-2xl border border-border object-cover object-top shadow-[var(--shadow-card)]"
+              />
             </Reveal>
           ))}
         </div>

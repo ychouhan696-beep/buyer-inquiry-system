@@ -1,9 +1,10 @@
 import { PrimaryButton, SecondaryButton } from "./landing-primitives";
 
 const stats = [
-  { value: "₹12Cr+", label: "Inventory Sold" },
-  { value: "34%", label: "Lower CPL" },
-  { value: "48H", label: "Launch" },
+  { value: "3.5+ Years", label: "Industry Experience" },
+  { value: "7,700+", label: "Total Buyer Leads Generated" },
+  { value: "₹1.4 Cr+", label: "Total Ad Spend Managed" },
+  { value: "Real Estate", label: "Industry Focus" },
 ];
 
 export function Hero() {
@@ -26,11 +27,14 @@ export function Hero() {
             See Campaign Proof
           </SecondaryButton>
         </div>
-        <dl className="fade-up mt-24 grid grid-cols-1 gap-10 border-t border-border pt-10 sm:grid-cols-3" style={{ animationDelay: "320ms" }}>
+        <dl
+          className="fade-up mx-auto mt-24 grid max-w-[1200px] grid-cols-2 gap-x-10 gap-y-12 border-t border-border pt-14 text-center md:grid-cols-4"
+          style={{ animationDelay: "320ms" }}
+        >
           {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col-reverse">
-              <dt className="mt-2 text-sm text-muted-foreground">{stat.label}</dt>
-              <dd className="font-display text-4xl font-extrabold tracking-[-0.03em] text-gold md:text-5xl">{stat.value}</dd>
+            <div key={stat.label} className="flex flex-col-reverse items-center gap-3">
+              <dt className="text-sm text-slate-400">{stat.label}</dt>
+              <dd className="font-display text-5xl font-extrabold tracking-[-0.03em] text-gold">{stat.value}</dd>
             </div>
           ))}
         </dl>

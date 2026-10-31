@@ -3,12 +3,12 @@ import { ZoomableImage } from "./ZoomableImage";
 
 const conversations = [
   {
-    image: "/images/WhatsApp_Image_2026-10-31_at_5.54.39_PM.jpeg",
+    image: "/images/final_precise_villa.png",
     alt: "WhatsApp conversation with Amit Jain about a Noida villa, loan approval and a Sunday site visit",
     label: "Amit Jain • Noida Villa • 65L Budget • Loan 45L Approved • Site Visit: Sunday 11AM",
   },
   {
-    image: "/images/WhatsApp_Image_2026-10-31_at_5.52.30_PM.jpeg",
+    image: "/images/final_precise_plot.png",
     alt: "WhatsApp conversation with Sunil Sharma about a Noida plot, self buying and a Saturday site visit",
     label: "Sunil Sharma • Noida Plot • 50L Budget • Self Buyer (Not Broker) • Site Visit: Saturday 4PM Jewar",
   },
